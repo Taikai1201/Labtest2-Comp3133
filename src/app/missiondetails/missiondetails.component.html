@@ -1,0 +1,8 @@
+<h1>Mission - {{ mission.mission_name }}</h1>
+<p>Launch Year: {{ mission.launch_year }}</p>
+<p>Name: {{ mission.rocket.rocket_name }}</p>
+<p>Type: {{ mission.rocket.rocket_type }}</p>
+
+<div *ngIf="mission.launch_site">
+    <p>Name: {{ mission.launch_site.site_name_long }}</p>
+</div>
