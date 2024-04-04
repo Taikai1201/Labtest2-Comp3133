@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 export const routes: Routes = [
     { path: '', redirectTo: 'missionlist', pathMatch: 'full' },
     { path: 'missionlist', component: MissionlistComponent },
-    { path: 'missiondetails', component: MissiondetailsComponent },
+    { path: 'missiondetails/:mission_flight_number', component: MissiondetailsComponent },
     { path: '**', redirectTo: 'missionlist'}
   ];
 

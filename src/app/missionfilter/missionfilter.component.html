@@ -1,6 +1,19 @@
-<div>
-    <select [(ngModel)]="selectedYear" (change)="onYearSelect()">
+<!-- <div>
+    <select [(ngModel)]="selectedYear" (change)="onYearSelect($event)">
       <option *ngFor="let year of years" [value]="year">{{ year }}</option>
     </select>
-  </div>
+  </div> -->
+<!-- 
+  <mat-select [(value)]="selectedYear" (selectionChange)="onYearSelect($event.value)">
+    <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+  </mat-select> -->
   
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Year</mat-label>
+      <mat-select [(ngModel)]="selectedYear" (change)="onYearSelect($event)">
+        <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>

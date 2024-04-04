@@ -10,4 +10,23 @@ div {
   h2 {
     color: #007bff;
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .mission-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the width of each grid item as needed */
+    grid-gap: 20px; /* Add some spacing between grid items */
+  }
+  
+  .mission-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc; /* Add borders around each grid item */
+    padding: 10px;
+  }
   

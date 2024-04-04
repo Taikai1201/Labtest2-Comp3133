@@ -1,5 +1,5 @@
-<div>
-  <!-- <app-missionfilter (yearSelected)="filterByYear($event)"></app-missionfilter> -->
+<!-- <div>
+  <app-missionfilter (yearSelected)="filterByYear($event)"></app-missionfilter>
   <div *ngFor="let data of filteredMissionList">
     <div>
       <img src="{{ data.links.mission_patch_small }}" alt="mission img">
@@ -10,17 +10,21 @@
       <p>{{ data.details || '-'}}</p>
     </div>
   </div>
+</div> -->
+
+
+<div class="container">
+  <app-missionfilter (yearSelected)="filterByYear($event)"></app-missionfilter>
+  <div class="mission-list">
+    <div *ngFor="let data of filteredMissionList" class="mission-item" (click)="showDetails(data.flight_number)">
+      <div>
+        <img src="{{ data.links.mission_patch_small }}" alt="mission img">
+      </div>
+      <div>
+        <h2>{{ data.mission_name || '-'}}</h2>
+        <p>Year: {{ data.launch_year || '-' }}</p>
+        <p>{{ data.details || '-'}}</p>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<!-- <div *ngFor="let data of fetchData">
-    <div>
-      <img src="{{ data.links.mission_patch_small }}" alt="mission img">
-    </div>
-    <div>
-      <h2>{{ data.mission_name || '-'}}</h2>
-      <p>Year: {{ data.launch_year || '-' }}</p>
-      <p>{{ data.details || '-'}}</p>
-    </div>
-  </div> -->
-  

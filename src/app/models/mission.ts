@@ -1,15 +1,13 @@
-// For Mission List
 export interface MissionData {
+    flight_number: string;
     mission_name: string;
     launch_year: string;
     details: string;
-    flight_number: string;
     links: {
         mission_patch_small: string;
     };
 }
 
-// For Mission details
 export interface MissionDetail {
     flight_number: string;
     mission_name: string;

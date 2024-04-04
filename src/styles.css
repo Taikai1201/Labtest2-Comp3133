@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* style.css */
+/* Example dark-themed styles */
+body {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
+  }
+  
+  mat-form-field {
+    color: #ffffff; /* Light text color */
+  }
+  
+  mat-option {
+    background-color: #212121; /* Darker background color */
+    color: #ffffff; /* Light text color */
+  }
+  

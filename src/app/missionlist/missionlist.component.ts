@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 import { MissionData} from '../models/mission';
 import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { MissionfilterComponent } from '../missionfilter/missionfilter.component';
 
 @Component({
   selector: 'app-missionlist',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, MissionfilterComponent],
   templateUrl: './missionlist.component.html',
-  styleUrl: './missionlist.component.css'
+  styleUrl: './missionlist.component.css',
 })
 export class MissionlistComponent implements OnInit {
   fetchData: MissionData[] = [];
@@ -28,15 +29,20 @@ export class MissionlistComponent implements OnInit {
   }
   
   filterByYear(year: number) {
+    console.log('Filtered year:', year); 
+
     if (year) {
-      this.filteredMissionList = this.fetchData.filter(mission => mission.launch_year === year.toString());
+      this.filteredMissionList = this.fetchData.filter(
+        (mission) => mission.launch_year === year.toString()
+      );
     } else {
       this.filteredMissionList = this.fetchData;
     }
   }
 
-  showDetails(mission_flight_number: string) {
-    this.router.navigate(['/missiondetails'], { state: { mission_flight_number: mission_flight_number } });
+
+  showDetails(flightNumber: string) {
+    this.router.navigate(['/missiondetails', flightNumber]);
   }
 
 
